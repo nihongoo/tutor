@@ -1,0 +1,19 @@
+﻿@{
+    var d = ViewData["SNT"];
+}
+@using (Html.BeginForm("CheckSNT", "Home", FormMethod.Post))
+{
+	<div class="form-group">
+		<label for="a">Nhập số cần check:</label>
+		<input type="text" id="a" name="a" class="form-control" />
+	</div>
+	<div class="d-flex flex-row-reverse mt-3">
+		<button type="submit" class="btn btn-dark text-light">Check</button>
+	</div>
+	@if (d != null)
+	{
+		<div class="alert alert-info mt-3">
+			@d 
+		</div>
+	}
+}
